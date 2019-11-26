@@ -49,23 +49,25 @@ void main()
    如果想让某一CPU占满，只需写一个bat脚本，具体步骤如下：
    - 新建loop.bat文件
    - 将下面的内容copy到文件中
-        ```shell script
-           :loop
-           goto loop
-        ```
+        
+     ```cmd
+       :loop
+       goto loop
+     ```
+     
    - 双击loop.bat
    - 按照上面的步骤绑定到指定CPU
    
 #### 另：linux下指定CPU(待完善)
 1. Shell脚本
 
-    ```shell script
-      tastset -p cpu pid
+    ```cmd
+    tastset -p cpu pid
     ```   
 
 2. 内核接口
 
-    ```shell script
+    ```cmd
     setaffinity 
     getaffinity 
     ```
