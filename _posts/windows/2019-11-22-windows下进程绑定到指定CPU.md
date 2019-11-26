@@ -22,7 +22,7 @@ void main()
     //do somthing
 }
 ```
-#### 二、手动实现
+#### 二、手动实现（推荐）
 1. 打开资源管理器->进程,随便找一个进程右击，点击转到详细信息
    
     <figure>
@@ -45,18 +45,27 @@ void main()
         </figcaption>
     </figure>
     
-3. 勾选想指定的CPU，完结撒花
-
-#### linux下指定CPU
+3. 勾选想指定的CPU，完结撒花。  
+   如果想让某一CPU占满，只需写一个bat脚本，具体步骤如下：
+   - 新建loop.bat文件
+   - 将下面的内容copy到文件中
+        ```shell script
+           :loop
+           goto loop
+        ```
+   - 双击loop.bat
+   - 按照上面的步骤绑定到指定CPU
+   
+#### 另：linux下指定CPU(待完善)
 1. Shell脚本
 
-```shell script
-tastset -p cpu pid
-```   
+    ```shell script
+      tastset -p cpu pid
+    ```   
 
 2. 内核接口
 
-```shell script
-setaffinity 
-getaffinity 
-```
+    ```shell script
+    setaffinity 
+    getaffinity 
+    ```
