@@ -24,7 +24,7 @@ layout: default
               <h2>
               {{ post.title }}
               </h2>
-              <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="">{{ post.date | date: "%Y年%b月%-d日" }}</span>
             </a>
           {% endfor %}
         </div>
@@ -38,7 +38,9 @@ layout: default
                     <h2>
                     {{ post.title }}
                     </h2>
-                    <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+                    <span class="">{{ post.date | date: "%Y年%b月%-d日" }}</span>
+                     | 阅读量：
+                    <span id="busuanzi_value_page_pv"></span>
                   </a>
                 {% endif %}
               {% endfor %}
