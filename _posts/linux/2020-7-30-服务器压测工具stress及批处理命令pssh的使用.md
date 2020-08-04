@@ -27,6 +27,10 @@ categories: linux
         ```
     2. 内存
         ```cmd
+       #每个进程分配256M内存，如果压到32G，则最后数字改为128
+       stress -m 1
+       #上面等价与
+       stress --vm 1 --vm-bytes 32G
        #新增4个io进程，10个内存分配进程，每次分配大小1G，分配后不释放，测试100S
         stress –i 4 –vm 10 –vm-bytes 1G –vm-hang 100 –timeout 100s 
        ```  
@@ -82,5 +86,7 @@ categories: linux
             pscp -r -h ip.txt test/ /tmp/dir1/
         ```
     
+
+
 
 
